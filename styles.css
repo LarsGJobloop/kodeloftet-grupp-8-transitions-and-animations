@@ -44,13 +44,51 @@
   margin-right: auto;
 
   animation-name: bouncing-ball;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }
 
 @keyframes bouncing-ball {
-  to {
-    transform: translateY(150px);
+  0% {
+    transform: translateY(0px);
   }
+
+  40% {
+    transform: translateY(150px);
+    height: 50px;
+    width: 50px;
+  }
+
+  50% {
+    transform: translateY(160px);
+    height: 40px;
+    width: 60px;
+  }
+
+  60% {
+    transform: translateY(150px);
+    height: 50px;
+    width: 50px;
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Slidin Animation */
+.slidin-left {
+  animation-name: slidin-left;
+  animation-duration: 1s;
+}
+
+@keyframes slidin-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

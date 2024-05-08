@@ -36,6 +36,53 @@
 
   </section>
 
+  <section>
+    <h2>Fibonacci</h2>
+
+    <div>Output <span id="Fibonacci">0</span></div>
+    <button id="decrement">Previous</button>
+    <button id="increment">Next</button>
+
+    <script>
+      function fibonacci(nthNumber) {
+        if (nthNumber === 0) {
+          return 0
+        }
+
+        let a = 0
+        let b = 1
+
+        let c;
+
+        for (let i = 0; i < nthNumber; i++) {
+          c = a + b
+          a = b
+          b = c
+        }
+
+        return c
+      }
+
+      function update(newNumber) {
+        document.getElementById("Fibonacci")
+          .innerHTML = newNumber
+
+      }
+
+      let current = 0
+      document.getElementById("decrement")
+        .addEventListener("click", () => {
+          current--
+          update(fibonacci(current))
+        })
+      document.getElementById("increment")
+        .addEventListener("click", () => {
+          current++
+          update(fibonacci(current))
+        })
+    </script>
+  </section>
+
 </body>
 
 </html>
